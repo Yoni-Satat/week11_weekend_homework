@@ -1,14 +1,22 @@
 const Hero = require('../hero.js');
 const Food = require('../food.js');
+const Task = require('../task.js');
 const assert = require('assert');
 
 describe('Hero', function() {
   let hero;
   let food;
+  let task1;
+  let task2;
+  let task3;
 
   beforeEach(function() {
-    hero = new Hero("Joe", 100, "tacos");
     food = new Food("tacos", 10);
+    task1 = new Task(1, 2, 10, false);
+    task2 = new Task(5, 3, 20, false);
+    task3 = new Task(3, 1, 30, false);
+    tasks = [task1, task2, task3];
+    hero = new Hero("Joe", 100, "tacos", tasks);
   });
 
   it('should have a name', function() {
@@ -23,12 +31,20 @@ describe('Hero', function() {
     assert.strictEqual(hero.favFood, "tacos");
   });
 
+  it('should have tasks', function() {
+    assert.deepEqual(hero.tasks, [task1, task2, task3]);
+  });
+
   it('should be able to talk', function() {
     assert.strictEqual(hero.talk("Joe"), "Hi, I'm Joe");
   });
 
   it('should be able to eat and increase helath value', function() {
     assert.strictEqual(hero.eat(food), 110);
+  });
+
+  it('should be able to sort their tasks by difficulty', function() {
+    assert.deepEqual(hero.sort(tasks), [task1, task3, task2]);
   });
 });
 
