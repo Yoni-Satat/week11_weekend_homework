@@ -21,15 +21,16 @@ Hero.prototype.eat = function(food) {
 }
 
 // A hero should be able to sort their tasks by difficulty, urgency or reward.
-Hero.prototype.sort = function(tasks) {
-  return tasks.sort(function(a,b) {
-    return a.difficultyLevel - b.difficultyLevel;
+Hero.prototype.sort = function(valueToSort) {
+  return this.tasks.sort(function(a,b) {
+    // a["difficultyLevel"]
+    return a[valueToSort] - b[valueToSort] //a.difficultyLevel - b.difficultyLevel;
   });
 }
 
-Hero.prototype.filter = function(tasks) {
-  let filtered = tasks.filter(function(task){
-    return task.completed === true;
+Hero.prototype.filterTasksByCompleted = function(value) {
+  let filtered = this.tasks.filter(function(task){
+    return task.completed === value;
   });
   return filtered;
 }
