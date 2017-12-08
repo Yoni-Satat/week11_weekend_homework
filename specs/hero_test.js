@@ -46,6 +46,12 @@ describe('Hero', function() {
   it('should be able to sort their tasks by difficulty', function() {
     assert.deepEqual(hero.sort(tasks), [task1, task3, task2]);
   });
+
+  it('should be able to view tasks that are marked as completed or incomplete', function() {
+    task1.toggleCompleted();
+    task3.toggleCompleted();
+    assert.deepEqual(hero.filter(tasks), [task1, task3]);
+  })
 });
 
 // const urgencies = {

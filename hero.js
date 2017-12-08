@@ -27,5 +27,14 @@ Hero.prototype.sort = function(tasks) {
   });
 }
 
+Hero.prototype.filter = function(tasks) {
+  let filtered = tasks.filter(function(task){
+    return task.completed === true;
+  });
+  return filtered;
+}
+
+// A hero should be able to view tasks that are marked as completed or incomplete
+
 
 module.exports = Hero;
