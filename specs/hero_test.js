@@ -8,7 +8,7 @@ describe('Hero', function() {
 
   beforeEach(function() {
     hero = new Hero("Joe", 100, "tacos");
-    food = new Food("banana", 10);
+    food = new Food("tacos", 10);
   });
 
   it('should have a name', function() {
