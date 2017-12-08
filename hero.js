@@ -5,8 +5,14 @@ const Hero = function(name, health, favFood) {
   this.tasks = [];
 }
 
-Hero.prototype.canTalk = function() {
-  return "Hi, I'm Joe";
+Hero.prototype.talk = function(name) {
+  return `Hi, I'm ${name}`;
+}
+
+// A hero should be able to eat food
+// and health should go up by the replenishment value
+Hero.prototype.eat = function(food) {
+  return this.health += food.replenishmentValue;
 }
 
 module.exports = Hero;

@@ -1,11 +1,14 @@
 const Hero = require('../hero.js');
+const Food = require('../food.js');
 const assert = require('assert');
 
 describe('Hero', function() {
   let hero;
+  let food;
 
   beforeEach(function() {
     hero = new Hero("Joe", 100, "tacos");
+    food = new Food("banana", 10);
   });
 
   it('should have a name', function() {
@@ -21,7 +24,11 @@ describe('Hero', function() {
   });
 
   it('should be able to talk', function() {
-    assert.strictEqual(hero.canTalk(), "Hi, I'm Joe");
+    assert.strictEqual(hero.talk("Joe"), "Hi, I'm Joe");
+  });
+
+  it('should be able to eat and increase helath value', function() {
+    assert.strictEqual(hero.eat(food), 110);
   });
 });
 
