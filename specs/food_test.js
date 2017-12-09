@@ -19,4 +19,14 @@ describe('Food', function() {
   it('should not be poisonous', function() {
     assert.strictEqual(food.poisonous, false);
   });
+
+  it('should be poisonous', function() {
+    food.togglePoisonous();
+    assert.strictEqual(food.poisonous, true);
+  });
+
+  it('should lose replenishment value if touched by rat', function() {
+    food.touchedByRat();
+    assert.strictEqual(food.replenishmentValue, 5);
+  });
 });
