@@ -27,6 +27,6 @@ describe('Food', function() {
 
   it('should lose replenishment value if touched by rat', function() {
     food.touchedByRat();
-    assert.strictEqual(food.replenishmentValue, 5);
+    assert.strictEqual(food.replenishmentValue, -30);
   });
 });

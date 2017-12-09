@@ -11,7 +11,7 @@ describe('Hero', function() {
   let task3;
 
   beforeEach(function() {
-    food = new Food("tacos", 10);
+    food = new Food("tacos", 10, false);
     task1 = new Task(1, 2, 10, false);
     task2 = new Task(5, 3, 20, false);
     task3 = new Task(3, 1, 30, false);
@@ -41,6 +41,12 @@ describe('Hero', function() {
 
   it('should be able to eat and increase helath value', function() {
     assert.strictEqual(hero.eat(food), 110);
+  });
+
+  it('should lose health value if eat poisonous food', function() {
+    food.touchedByRat(food);
+    hero.eat(food);
+    assert.strictEqual(hero.health, 70);
   });
 
   it('should be able to sort their tasks by difficulty', function() {

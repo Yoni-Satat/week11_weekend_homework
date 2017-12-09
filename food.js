@@ -9,7 +9,7 @@ Food.prototype.togglePoisonous = function() {
 }
 
 Food.prototype.touchedByRat = function() {
-  this.replenishmentValue -= 5;
+  this.replenishmentValue += -40;
 }
 
 module.exports = Food;
