@@ -2,7 +2,7 @@
 
 ## The task is to test drive the beginnings of an adventure game!
 
-## Tasks:
+## MVP:
 
 ## A. Create a constructor to create a Hero character
 
@@ -36,8 +36,3 @@ If the food is their favourite food, their health should go up by 1.5 * value.
 - Create a constructor to create Rat objects.
 - Rats should be able to touch food, if they do the food becomes poisonous.
 - Heroes that eat poisonous food should lose health.
-Futher
-
-## Be creative. Extend the game! Give the hero super powers.
-
-- Create a supervillian who wants to take over the world!
