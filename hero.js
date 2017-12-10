@@ -30,5 +30,15 @@ Hero.prototype.filterTasksByCompleted = function(value) {
   return filtered;
 }
 
+Hero.prototype.checkRatTrap = function(trap) {
+  if (trap.volume.length > 0 && trap.volume.length < 2) {
+    return "you cauoght a rat, you can make medicine";
+  } else if (trap.volume.length > 1) {
+    return "you cauoght 2 rats!, congrats!";
+  } else {
+    return "Nothing here..."
+  }
+}
+
 
 module.exports = Hero;

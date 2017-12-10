@@ -1,6 +1,7 @@
 const Hero = require('../hero.js');
 const Food = require('../food.js');
 const Task = require('../task.js');
+const Trap = require('../trap.js');
 const assert = require('assert');
 
 describe('Hero', function() {
@@ -9,6 +10,7 @@ describe('Hero', function() {
   let task1;
   let task2;
   let task3;
+  let ratTrap;
 
   beforeEach(function() {
     food = new Food("tacos", 10, false);
@@ -17,6 +19,7 @@ describe('Hero', function() {
     task3 = new Task(3, 1, 30, false);
     tasks = [task1, task2, task3];
     hero = new Hero("Joe", 100, "tacos", tasks);
+    ratTrap = new Trap("Rat trap", 2);
   });
 
   it('should have a name', function() {
@@ -68,12 +71,19 @@ describe('Hero', function() {
     task3.toggleCompleted();
     assert.deepEqual(hero.filterTasksByCompleted(false), [task2]);
   })
-});
 
-// const urgencies = {
-//   'low': 0,
-//   'med': 1,
-//   'high': 2
-// }
-//
-// urgencies.low
+  it('should be able to make medicine if cauoght a rat', function() {
+    ratTrap.cauoghtRat();
+    assert.strictEqual(hero.checkRatTrap(ratTrap), "you cauoght a rat, you can make medicine");
+  });
+
+  it('should be able to make double portion medicine if cauoght a rat', function() {
+    ratTrap.cauoghtRat();
+    ratTrap.cauoghtRat();
+    assert.strictEqual(hero.checkRatTrap(ratTrap), "you cauoght 2 rats!, congrats!");
+  });
+
+  it('should find nothing in the rat trap', function() {
+    assert.strictEqual(hero.checkRatTrap(ratTrap), "Nothing here...");
+  });
+});
