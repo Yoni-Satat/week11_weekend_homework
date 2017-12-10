@@ -26,5 +26,5 @@ describe('Task', function() {
 
   it('should be able to mark completed', function() {
     assert.strictEqual(task.toggleCompleted(), true);
-  })
+  });
 });

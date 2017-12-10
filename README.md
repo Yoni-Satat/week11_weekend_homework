@@ -36,3 +36,9 @@ If the food is their favourite food, their health should go up by 1.5 * value.
 - Create a constructor to create Rat objects.
 - Rats should be able to touch food, if they do the food becomes poisonous.
 - Heroes that eat poisonous food should lose health.
+
+# My Extension
+
+- A hero will have a trap to catch Rats.
+- If a hero catch a Rat She/He could make medicine to gain health back.
+- 
