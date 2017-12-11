@@ -27,22 +27,29 @@ describe('Trap', function() {
     assert.strictEqual(ratTrap.volume.length, 0);
   });
 
+  it('should be able to empty trap', function() {
+    ratTrap.caughtRat(rat1);
+    ratTrap.caughtRat(rat1);
+    ratTrap.emptyTrap();
+    assert.strictEqual(ratTrap.volume.length, 0);
+  })
+
   it('should be able to catch a rat', function() {
-    ratTrap.cauoghtRat(rat1);
+    ratTrap.caughtRat(rat1);
     assert.strictEqual(ratTrap.volume.length, 1);
   });
 
   it('should not be able to contain more than 2 rats', function() {
     ratTrap.emptyTrap();
-    ratTrap.cauoghtRat(rat1);
-    ratTrap.cauoghtRat(rat2);
-    ratTrap.cauoghtRat(rat3);
-    assert.strictEqual(ratTrap.cauoghtRat(), 'trap is full');
+    ratTrap.caughtRat(rat1);
+    ratTrap.caughtRat(rat2);
+    ratTrap.caughtRat(rat3);
+    assert.strictEqual(ratTrap.caughtRat(), 'trap is full');
   });
 
   it('should be able to contain 2 rats', function() {
-    ratTrap.cauoghtRat(rat1);
-    ratTrap.cauoghtRat(rat2);
+    ratTrap.caughtRat(rat1);
+    ratTrap.caughtRat(rat2);
     assert.strictEqual(ratTrap.volume.length, 2);
   });
 

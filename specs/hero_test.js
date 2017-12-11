@@ -73,13 +73,13 @@ describe('Hero', function() {
   })
 
   it('should be able to make medicine if cauoght a rat', function() {
-    ratTrap.cauoghtRat();
+    ratTrap.caughtRat();
     assert.strictEqual(hero.checkRatTrap(ratTrap), "you cauoght a rat, you can make medicine");
   });
 
   it('should be able to make double portion medicine if cauoght a rat', function() {
-    ratTrap.cauoghtRat();
-    ratTrap.cauoghtRat();
+    ratTrap.caughtRat();
+    ratTrap.caughtRat();
     assert.strictEqual(hero.checkRatTrap(ratTrap), "you cauoght 2 rats!, congrats!");
   });
 

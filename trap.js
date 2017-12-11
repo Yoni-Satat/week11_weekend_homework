@@ -5,14 +5,11 @@ const Trap = function(type, capacity, volume) {
 }
 
 Trap.prototype.emptyTrap = function(rat) {
-  for(let i = 0; i < this.volume.length; i++) {
-    this.volume.unshift(rat);
-  }
-  return this.volume.length;
+  this.volume = [];
 }
 
-Trap.prototype.cauoghtRat = function(rat) {
-  if(this.volume.length < 2) {
+Trap.prototype.caughtRat = function(rat) {
+  if(this.volume.length < this.capacity) {
     this.volume.push(rat);
   } else {
     return 'trap is full';
